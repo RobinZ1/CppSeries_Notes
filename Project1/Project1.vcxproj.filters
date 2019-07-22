@@ -21,5 +21,13 @@
     <ClCompile Include="Log.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Math.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EndBrace.h">
+      <Filter>资源文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
