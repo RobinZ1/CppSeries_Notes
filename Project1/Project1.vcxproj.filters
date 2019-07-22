@@ -15,16 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Math.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Log.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Log.h">
-      <Filter>资源文件</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
