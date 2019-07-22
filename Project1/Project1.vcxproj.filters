@@ -18,5 +18,13 @@
     <ClCompile Include="Main.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
+    <ClCompile Include="log.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="log.h">
+      <Filter>资源文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

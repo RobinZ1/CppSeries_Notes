@@ -1,6 +1,4 @@
-#include <iostream>
-
-int main()
+/*
 {
 	//1b, 2b, 4b, 4b, 8b
 	//unsigned char, short, int, long, long long;
@@ -12,4 +10,12 @@ int main()
 	//bool - 1b
 	std::cout << variable << std::endl;
 	std::cin.get();
+}
+*/
+
+#include <iostream>
+
+int main()
+{
+
 }
