@@ -1,4 +1,5 @@
-#include <iostream>
+
+/*
 
 struct Entity
 {
@@ -25,4 +26,34 @@ int main()
 
 	//every non-static members of class have instance of a class as its parambers.
 }
+
+*/
  
+//tut24 local static in cpp
+//lifetime and scope
+
+#include <iostream>
+
+class Singleton
+{
+public:
+	static Singleton& Get()
+	{
+		static Singleton instance; //has to be static, otherwise, instance get destroyed leaving the scope
+		//unless, make method non-static as well.
+		return instance;
+	}
+
+	void Hello()
+	{
+		std::cout << "Banzai!" << std::endl;
+	}
+
+};
+
+
+int main()
+{
+	Singleton::Get().Hello();
+	std::cin.get();
+}
