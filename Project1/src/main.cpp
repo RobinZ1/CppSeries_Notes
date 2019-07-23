@@ -2,21 +2,27 @@
 
 struct Entity
 {
-	static int x, y;
-	void print()
+	int x, y;
+	static void Print()
 	{
 		std::cout << x << ", " << y << std::endl;
 	}
 };
-
-int Entity::x;
-int Entity::y;
+//but this works
+static void Print(Entity e)
+{
+	std::cout << e.x << ", " << e.y << std::endl;
+}
 
 int main()
 {
 	Entity e;
 	e.x = 2;
 	e.y = 3;
-	e.print();
+	Entity::Print();
 	std::cin.get();
+	//static method can not have access to non-static members, since it does not have a class instance, unless refer to line 11th, pass instance as parameter
+
+	//every non-static members of class have instance of a class as its parambers.
 }
+ 
