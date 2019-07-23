@@ -14,8 +14,21 @@
 */
 
 #include <iostream>
+#include "Log.h"
 
 int main()
 {
+	for (int i = 0; i < 5; i++)
+	{
+		if (i > 2)
+			continue; //continue means to return to for statement, skipping two lines below
+		//break end the loop immediately
+		Log("Hello World!");
+		std::cout << i << std::endl;
+	} 
+	 
 
+	std::cin.get();//this keeps window open
 }
+
+   
