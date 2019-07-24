@@ -246,10 +246,14 @@ int main()
 
 
 /*tut 32 arrays*/
+
+/*
 #include <iostream>
+
 
 int main()
 {
+	
 	int example[5];
 	for (int i = 0; i < 5; i++)
 		example[i] = 2;
@@ -258,4 +262,63 @@ int main()
 	example[2] = 5;
 	*(ptr + 2) = 6; // or  *(int*)((char*)ptr+8)=6
 	std::cin.get();
+	*/
+
+	/*
+	int example[5];//built on stack, cleared when leaving scope
+	for (int i = 0; i < 5; i++)
+	{
+		example[i] = 2;
+	}
+	int* another = new int[5];//built on heap, cleared when program terminates or being destroyed
+	for (int i = 0; i < 5; i++)
+	{
+		another[i] = 2;
+	}
+	delete[] another;
+	//array built on stack vs array on heap:  * new[]
+	//difference and purpose
+	std::cin.get();
+
+}
+*/
+/*
+#include <iostream>
+#include <array>
+
+class Entity
+{
+public:
+	static const int exampleSize = 5;
+	int example[exampleSize];
+
+	//or in c++ std;
+	std::array<int, 5> another;
+	Entity()
+	{
+		for (int i = 0; i < another.size(); i++)
+			example[i] = 2;
+	}
+};
+
+int main()
+{}
+*/
+
+
+
+
+//tut 33 strings
+#include <iostream>
+#include <string>
+
+int main()
+{
+	std::string name = std::string("Cherno")+" hello!"; //const char array, thus, can not add "Hello" with + after "Cherno
+	//or you can do name += " hello";
+	
+	bool contains = name.find("no") != std::string::npos;
+	std::cout << name << std::endl;
+	std::cin.get(); 
+	
 }
