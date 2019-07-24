@@ -64,19 +64,86 @@ int main()
 //commit change and push it to github!
 */
 
+
+
+//tut25
+/*
+
 #include <iostream>
 
-enum Example : unsigned char
+class Log
 {
-	A= 5, B, C
+public:
+	enum Level
+	{
+		LevelError = 0, LevelWarning, LevelInfo
+	};
+private:
+	Level m_LogLevel = LevelInfo;
+public:
+	void SetLevel(Level level)
+	{
+		m_LogLevel = level;
+	}
+	void Error(const char* message)
+	{
+		if (m_LogLevel >= LevelError)
+			std::cout << "[Error]: " << message << std::endl;
+	}
+	void Warn(const char* message)
+	{
+		if (m_LogLevel >= LevelWarning)
+			std::cout << "[Warn]: " << message << std::endl;
+	}
+	void Info(const char* message)
+	{
+		if (m_LogLevel >= LevelInfo)
+			std::cout << "[Info]: " << message << std::endl;
+	}
+
 };
 
 int main()
 {
-	Example value = B;
-	if (value == 1)
-	{
-		
-	}
+	Log log;
+	log.SetLevel(Log::LevelError);
+	log.Warn("Hello");
+	log.Error("Hello");
+	log.Info("Hello");
 	std::cin.get();
+}
+*/
+
+/**/
+//tut27 destructor
+
+#include <iostream>
+
+class Entity
+{
+public:
+	float X, Y;
+
+	Entity()
+	{}
+	Entity(float x, float y)
+	{
+		X = x;
+		Y = y;
+	}
+
+	~Entity()
+	{
+
+	}
+
+	void Print()
+	{
+		std::cout << X << ", " << Y < std::endl;
+	}
+};
+
+int main()
+{
+
 }
