@@ -307,18 +307,60 @@ int main()
 
 
 
-
+/*
 //tut 33 strings
 #include <iostream>
 #include <string>
+
+void Print(const std::string& string) //& pass bt reference, no copy, const means no change is a promise
+{
+	std::cout << string << std::endl;
+}
 
 int main()
 {
 	std::string name = std::string("Cherno")+" hello!"; //const char array, thus, can not add "Hello" with + after "Cherno
 	//or you can do name += " hello";
+
+	//notice, string is a class! to modify it
 	
 	bool contains = name.find("no") != std::string::npos;
-	std::cout << name << std::endl;
+	if(contains)
+		Print(name);
 	std::cin.get(); 
 	
 }
+*/
+
+//tut34 
+//char* name = "abv";
+//name[2] = 'a' modification is not allowed by creating such pointer since by default it is const, change pointer to name[] will do the job
+
+#include <iostream>
+#include <string>
+#include <stdlib.h>
+
+int main()
+{
+	using namespace std::string_literals;
+	std::u32string name0 = U"Cherno"s + U" hello"; //adding s!
+	const char* name = "Cherno"; //or u8"Cherno" 
+	const wchar_t* name2 = L"Cherno";
+	const char16_t* name3 = u"Cherno"; //2 bytes on windows, 4 bytes on linux
+	const char32_t* name4 = U"Cherno";
+
+
+	const char* example = R"(Line1
+Line2
+Line3
+Line4)";
+
+	const char* ex = "Line1\n"
+		"Line2\n"
+		"Line3\n";
+
+
+	std::cout << name0 << std::endl;
+	std::cin.get();
+}
+
