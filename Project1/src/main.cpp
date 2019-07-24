@@ -464,6 +464,8 @@ int main()
 }
 */
 
+
+/*
 //tut39 how to create instantiate objects 
  
 #include <iostream>
@@ -493,15 +495,22 @@ int main()
 		e = entity;
 		std::cout << e->GetName() << std::endl;
 	}
-	/*
+	
 	//stack
 	Entity* e;
 	{
 		Entity entity("Cherno");
 		e = &entity;
 		std::cout <<entity.GetName() << std::endl;
-	}*/
+	}
 
 	std::cin.get();
 	delete e;
 }
+*/
+
+
+
+//tut40 NEW keyboard in cpp ---delete & delete[]
+//tut41 implicit conversion and the explicit keyword in cpp
+
