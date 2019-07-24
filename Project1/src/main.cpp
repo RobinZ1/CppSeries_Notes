@@ -332,6 +332,7 @@ int main()
 }
 */
 
+/*
 //tut34 
 //char* name = "abv";
 //name[2] = 'a' modification is not allowed by creating such pointer since by default it is const, change pointer to name[] will do the job
@@ -364,3 +365,41 @@ Line4)";
 	std::cin.get();
 }
 
+*/
+
+//tut35 const in c
+
+/**/
+#include <iostream>
+#include <string>
+
+class Entity
+{
+private:
+	int* m_X, *m_Y;
+	mutable int var; //must have mutable keyword to modify it within const method along with other const variables
+public:
+	const int* const GetX() const //meaning not modifying any
+		//const class variables, 
+	{ 
+		var = 2; //but mutable variable can be modified
+		return m_X; 
+	}
+
+	void SetX(int x)
+	{
+		*m_X = x;
+	}
+};
+
+void Print(const Entity& e)
+{
+	m_X = x;
+}
+
+int main()
+{
+	//const int* b;//not modifying its content
+	//int* const c; //not modifying pointer
+	//int const * b;//same as the first one
+}
