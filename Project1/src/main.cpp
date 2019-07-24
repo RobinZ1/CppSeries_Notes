@@ -29,8 +29,10 @@ int main()
 
 */
  
+/*
 //tut24 local static in cpp
 //lifetime and scope
+
 
 #include <iostream>
 
@@ -55,5 +57,26 @@ public:
 int main()
 {
 	Singleton::Get().Hello();
+	std::cin.get();
+}
+
+//To do:
+//commit change and push it to github!
+*/
+
+#include <iostream>
+
+enum Example : unsigned char
+{
+	A= 5, B, C
+};
+
+int main()
+{
+	Example value = B;
+	if (value == 1)
+	{
+		
+	}
 	std::cin.get();
 }
