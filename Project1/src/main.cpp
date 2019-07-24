@@ -204,7 +204,7 @@ int main()
 
 */
 
-
+/*
 //tut30 interfaec-which is a class in c++
 //tut 31 visibility
 #include <iostream>
@@ -241,3 +241,21 @@ int main()
 	std::cin.get();
 } 
  
+
+ */
+
+
+/*tut 32 arrays*/
+#include <iostream>
+
+int main()
+{
+	int example[5];
+	for (int i = 0; i < 5; i++)
+		example[i] = 2;
+
+	int* ptr = example;
+	example[2] = 5;
+	*(ptr + 2) = 6; // or  *(int*)((char*)ptr+8)=6
+	std::cin.get();
+}
