@@ -460,6 +460,48 @@ int main()
 
 	s_Speed = s_Level > 5 ? (s_Level > 10 ? 15 : 10) : 5;
 	std::cout << s_Speed << std::endl;
-	std::cin.get                                                                                                                                                                                        
+	std::cin.get                                                                                                                                
 }
 */
+
+//tut39 how to create instantiate objects 
+ 
+#include <iostream>
+#include <string>
+
+class Entity {
+private:
+	std::string m_Name;
+public:
+	Entity() : m_Name("unknown") {}
+	Entity(const std::string& name) : m_Name(name) {}
+	void GetName()
+	{
+		std::cout << "banzai" << std::endl;
+	}
+};
+
+
+int main()
+{
+	//1. stack-simple and auto memory-cleaning, for small size of tasks
+
+	//2. heap-manually use delete, large object set and want to manually track lifetime, then use heap
+	Entity* e;
+	{
+		Entity* entity = new Entity("Cherno");
+		e = entity;
+		std::cout << e->GetName() << std::endl;
+	}
+	/*
+	//stack
+	Entity* e;
+	{
+		Entity entity("Cherno");
+		e = &entity;
+		std::cout <<entity.GetName() << std::endl;
+	}*/
+
+	std::cin.get();
+	delete e;
+}
