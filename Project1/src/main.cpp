@@ -410,6 +410,7 @@ int main()
 
 
 //tut36 the mutable keyword in cpp
+/*
 #include <iostream>
 #include <string>
 
@@ -443,3 +444,22 @@ int main()
 	std::cin.get();
 }
 
+*/
+
+//tut 37 Member initializer lists in cpp
+
+//tut38 ternary operators in cpp
+/*
+#include <iostream>
+#include <string>
+
+int main()
+{
+	static int s_Level = 11;
+	static int s_Speed = 10;
+
+	s_Speed = s_Level > 5 ? (s_Level > 10 ? 15 : 10) : 5;
+	std::cout << s_Speed << std::endl;
+	std::cin.get                                                                                                                                                                                        
+}
+*/
