@@ -367,9 +367,12 @@ Line4)";
 
 */
 
-//tut35 const in c
 
-/**/
+
+
+
+//tut35 const in c++
+/*
 #include <iostream>
 #include <string>
 
@@ -403,3 +406,40 @@ int main()
 	//int* const c; //not modifying pointer
 	//int const * b;//same as the first one
 }
+*/
+
+
+//tut36 the mutable keyword in cpp
+#include <iostream>
+#include <string>
+
+class Entity {
+private:
+	std::string m_Name;
+	mutable int m_DebugCount = 0;
+public:
+	const std::string& GetName() const 
+	{
+		m_DebugCount++;
+		return m_Name;
+	}
+};
+
+int main()
+{
+	const Entity e;
+	e.GetName(); 
+
+	int x = 8;
+	auto f = [=]() mutable //(=)means to pass it by value
+	{
+		x++;
+		std::cout << "Hello "<<x<< std::endl;
+	};
+
+	f();
+	
+	std::cout << x<< std::endl; //still 8, not passing by reference but by value =
+	std::cin.get();
+}
+
