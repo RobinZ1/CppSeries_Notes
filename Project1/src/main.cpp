@@ -114,7 +114,7 @@ int main()
 }
 */
 
-/**/
+/*
 //tut27 destructor
 
 #include <iostream>
@@ -125,7 +125,11 @@ public:
 	float X, Y;
 
 	Entity()
-	{}
+	{
+		X = 0;
+		Y = 0;
+		std::cout << "Created Entity!" << std::endl;
+	}
 	Entity(float x, float y)
 	{
 		X = x;
@@ -134,16 +138,106 @@ public:
 
 	~Entity()
 	{
-
+		std::cout << "Entity Destroyed!" << std::endl;
 	}
 
 	void Print()
 	{
-		std::cout << X << ", " << Y < std::endl;
+		std::cout<<X<<", " <<Y << std::endl;
+	}
+};
+
+void Function()
+{
+	Entity e;
+	e.Print();
+}
+
+int main()
+{
+	Function();
+	std::cin.get();
+}
+*/
+
+
+//tut29 Virtual Functions
+
+/*
+#include <iostream>
+#include <string>
+
+class Entity {
+public:
+	virtual std::string GetName()
+	{
+		return "Entity";
+	}
+};
+
+class Player : public Entity
+{
+private:
+	std::string m_Name;
+public:
+	Player(const std::string& name)
+		: m_Name(name) {}
+
+	std::string GetName() override { return m_Name; }//override must be paired with 'virtual' keyword
+};
+
+void PrintName(Entity* entity)
+{
+	std::cout << entity->GetName() << std::endl;
+}
+
+int main()
+{
+	Entity* e = new Entity();
+	PrintName(e);
+
+	Player* p = new Player("Cherno");
+	PrintName(p); //if basic method in basic class is non-virtual, then return "Entity" instead of "Cherno"
+
+	std::cin.get();
+}
+
+*/
+
+
+//tut30 interfaec-which is a class in c++
+//tut 31 visibility
+#include <iostream>
+#include <string>
+
+class Entity
+{
+protected:
+	int X, Y;
+	void Print() {};
+public:
+	Entity()
+	{
+		X = 0;
+		Print();
+	}
+};
+
+class Player : public Entity
+{
+public:
+	Player()
+	{
+		X = 2;
+		Print();
 	}
 };
 
 int main()
 {
-
-}
+	Entity e;
+	e.Print();//Print() and line below cause error: as Protected members and methods can only be accessed by sub class but not to be visited outside the class.
+	e.X = 2;
+	std::cin.get();
+} 
+ 
