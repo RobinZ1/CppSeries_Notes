@@ -750,4 +750,78 @@ int main()
 
 
 
-//TUT46 
+
+//TUT46 Copying and copy constructors in cpp
+
+#include <iostream>
+#include <string>
+
+class String
+{
+private:
+	char* m_Buffer;
+	unsigned int m_Size;
+public:
+	String(const char* string)
+	{
+		m_Size = strlen(string);
+		m_Buffer = new char[m_Size+1];//actually, notice + 1 is to allocate space for null end, strcpy function includes the null termination character
+		memcpy(m_Buffer, string, m_Size);
+		m_Buffer[m_Size + 1] = 0;
+	}
+	//*********
+	//Important: technics to perform deep copy
+	String(const String& other)
+		:m_Size(other.m_Size)
+	{
+		std::cout << "copied string" << std::endl;
+		m_Buffer = new char[m_Size + 1];
+		memcpy(m_Buffer, other.m_Buffer, m_Size + 1);
+		m_Buffer[m_Size + 1] = 0;
+	}
+	//that's it!
+
+	~String()
+	{
+		delete[] m_Buffer;
+	}
+
+	char& operator[](unsigned int index)
+	{
+		return m_Buffer[index];
+	}
+
+	friend std::ostream& operator<<(std::ostream& stream, const String& string);
+};
+
+std::ostream& operator<<(std::ostream& stream, const String& string)
+{
+	stream << string.m_Buffer;//a private variable
+	return stream; 
+}
+
+//private: only members of parent class & friend class/external function can have access to
+//protected: access is granted to class under inheritence.
+
+void PrintString(const String& string) //without &, "copied string" will be displayed twice
+{
+	std::cout << string << std::endl;
+}
+
+int main()
+{
+	
+	//following sallow copy make two string shared one common memory block
+	String string = "Cherno";
+	String second = string;
+	//notice the m_Buffer is the same for these two string
+	//so the program crash when m_Buffer gets cleaned twice
+	second[2] = 'a';//refer to line 778, the operator[] is implemented
+
+	PrintString(string);
+	PrintString(second);
+
+	std::cin.get();
+
+}
+
