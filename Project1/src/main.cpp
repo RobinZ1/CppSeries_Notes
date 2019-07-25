@@ -749,7 +749,7 @@ int main()
 
 
 
-
+/*
 
 //TUT46 Copying and copy constructors in cpp
 
@@ -776,8 +776,8 @@ public:
 	{
 		std::cout << "copied string" << std::endl;
 		m_Buffer = new char[m_Size + 1];
-		memcpy(m_Buffer, other.m_Buffer, m_Size + 1);
-		m_Buffer[m_Size + 1] = 0;
+		memcpy(m_Buffer, other.m_Buffer, m_Size + 1);//m_Size+1 to automatically place null terminator at the end of char array
+		m_Buffer[m_Size + 1] = 0;//in case no null terminator
 	}
 	//that's it!
 
@@ -810,7 +810,6 @@ void PrintString(const String& string) //without &, "copied string" will be disp
 
 int main()
 {
-	
 	//following sallow copy make two string shared one common memory block
 	String string = "Cherno";
 	String second = string;
@@ -825,3 +824,29 @@ int main()
 
 }
 
+
+*/
+
+
+
+/*
+//TUT47 arrow operation
+#include <iostream>
+#include <string>
+
+struct Vector3
+{//0, 4, 8 memory location offset
+	float x, y, z;
+};
+
+int main()
+{
+ 
+	//what to do if I want to know the offset of class variables' memory address?
+
+	int offset = (int)(&((Vector3*)0)->z); //8
+	std::cout << offset << std::endl;
+	std::cin.get(); 
+}
+
+*/
