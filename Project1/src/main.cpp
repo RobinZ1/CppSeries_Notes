@@ -683,3 +683,71 @@ int main()
 }
 
 */
+
+
+
+
+
+
+
+/*
+
+//TUT45 smart pointers in cpp
+#include <iostream>
+#include <string>
+
+class Entity
+{
+public:
+	Entity()
+	{
+		std::cout << "Created Entity!" << std::endl; 
+	}
+	~Entity() 
+	{
+		std::cout << "destroyed entity!" << std::endl;
+	}
+	void Print() {}
+};
+
+
+int main()
+{
+	/*
+	{
+		std::unique_ptr<Entity> entity = std::make_unique<Entity>();//this is more efficient way than using 'new' method, the latter one allocate memory twice while the first one only did it once
+		entity->Print();
+	}
+	*/
+	/*
+	//shared_ptr--reference count, only when count is 0 when leaving the second scope, the memory gets cleaned
+	{
+		std::shared_ptr<Entity> e0;
+		{
+			std::shared_ptr<Entity> sharedEntity = std::make_shared<Entity>();
+			e0 = sharedEntity;
+		}
+	}
+	
+
+	//weak_ptr: no reference counting, great for not taking ownship entities.
+
+	{
+		std::weak_ptr<Entity> e0;
+		{
+			std::shared_ptr<Entity> sharedEntity = std::make_sahred<Entity>();
+			e0 = sharedEntity;
+		}//when leaving this scope, weak_ptr will be pointing to invalid entity, so inquiry actions can be applied to weak_ptr to ask for status of shared_ptr within such group.  
+	}
+
+	std::cin.get();
+
+}
+
+
+*/
+
+
+
+
+//TUT46 
