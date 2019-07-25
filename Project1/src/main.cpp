@@ -848,5 +848,12 @@ int main()
 	std::cout << offset << std::endl;
 	std::cin.get(); 
 }
-
 */
+
+
+
+
+
+//TUT48 Dynamic Arrays in Cpp
+//vector---the dynamic array in cpp
+//no set size, 
