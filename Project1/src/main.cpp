@@ -615,3 +615,32 @@ int main()
 }
 
 */
+
+
+
+//TUT43 'THIS' KEYWORD
+#include <iostream>
+#include <string>
+
+void PrintEntity(Entity* e); //if changes to (Entity& e)
+
+class Entity
+{
+	int x, y;
+	Entity(int x, int y)
+	{
+		this->x = x;
+		this->y = y;
+		PrintEntity(this); //then changes to PrintEntity(*this)
+	}
+
+	int Getx() const
+	{
+		//const Entity* e = this; //meaning the content of this is not to be modified due to within const method
+	}
+};
+
+void PrintEntity(Entity* e)
+{
+	//Print
+}
