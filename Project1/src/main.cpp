@@ -617,7 +617,7 @@ int main()
 */
 
 
-
+/*
 //TUT43 'THIS' KEYWORD
 #include <iostream>
 #include <string>
@@ -644,3 +644,42 @@ void PrintEntity(Entity* e)
 {
 	//Print
 }
+*/
+
+
+/*
+//TUT44 Object lifetime in cpp
+class scopeP
+{
+private:
+	Entity* m_ptr;
+public:
+	scopeP(Entity* ptr)
+		: m_ptr(ptr)
+	{}
+
+	~scopeP()
+	{
+		delete m_ptr;
+	}
+};
+
+int main()
+{
+	//built on stack
+	{
+		Entity e;
+	}
+	//built on heap
+	{
+		Entity* e = new Entity();
+		delete e;
+	}
+
+	//or unique_pointer prototype, built on heap
+	{
+		scopeP e = new Entity();
+	}//and clear memory when leaving the scope
+}
+
+*/
