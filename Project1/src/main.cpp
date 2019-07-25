@@ -514,3 +514,27 @@ int main()
 //tut40 NEW keyboard in cpp ---delete & delete[]
 //tut41 implicit conversion and the explicit keyword in cpp
 
+#include <iostream>
+#include <string>
+
+class Entity
+{
+public:
+	std::string m_name;
+	int m_age;
+	Entity(const std::string& name): m_name(name), m_age(-1) {} //however, adding 'explicit' keyword in front disable the implicit declaration.
+	explicit Entity(int a): m_name("unknown"), m_age(a) {}
+};
+
+void Print(const Entity& entity)
+{
+	//print stuff
+}
+
+int main()
+{
+	Entity a = 18;
+	Entity b = "Cherno";
+	Print(18);
+	Print(std::string("Cherno"));//or implicitly, Entity("Cherno")
+}
