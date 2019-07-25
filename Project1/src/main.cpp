@@ -513,7 +513,7 @@ int main()
 
 //tut40 NEW keyboard in cpp ---delete & delete[]
 //tut41 implicit conversion and the explicit keyword in cpp
-
+/*
 #include <iostream>
 #include <string>
 
@@ -538,3 +538,80 @@ int main()
 	Print(18);
 	Print(std::string("Cherno"));//or implicitly, Entity("Cherno")
 }
+*/
+
+
+/*
+//TUT42 operators(, [], () ...) and operation overloadings
+//operator are just functions
+
+
+#include <iostream>
+#include <string>
+
+struct Vector2
+{
+	float x, y;
+	Vector2(float x, float y)
+		: x(x), y(y) {}
+
+	Vector2 Add(const Vector2& other) const
+	{
+		return Vector2(x + other.x, y + other.y);
+	}
+
+	Vector2 Multiply(const Vector2& other) const
+	{
+		return Vector2(x*other.x, y*other.y);
+	}
+
+
+	Vector2 operator+(const Vector2& other) const
+	{
+		return Add(other);
+		//return (*this)+other;
+	}
+
+	Vector2 operator*(const Vector2& other) const
+	{
+		return Multiply(other);
+		//return Vector2(x*other.x, y*other.y);
+	}
+
+	bool operator==(const Vector2& other) const
+	{
+		return x == other.x && y == other.y;
+		//return (*this) == other;
+	}
+};
+
+std::ostream& operator<<(std::ostream& stream, const Vector2& other)
+{
+	stream << other.x << ", " << other.y;
+	return stream;
+}
+
+int main()
+{
+	Vector2 position(4.0f, 4.0f);
+	Vector2 speed(0.5f, 1.5f);
+	Vector2 powerup(1.5f, 1.1f);
+
+	Vector2 result1 = position.Add(speed.Multiply(powerup));
+	Vector2 result2 = position + speed*powerup;
+
+	if (result1 == result2)
+	{
+		std::cout << "Banzai" << std::endl;
+	}
+	else
+	{
+		std::cout << "charge" << std::endl;
+	}
+
+	std::cout << result1 << "\n"<<std::endl;
+	std::cout << result2 << "\n" << std::endl;
+	std::cin.get();
+}
+
+*/
