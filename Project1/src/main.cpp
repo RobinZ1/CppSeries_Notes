@@ -852,8 +852,37 @@ int main()
 
 
 
-
+/*
 
 //TUT48 Dynamic Arrays in Cpp
 //vector---the dynamic array in cpp
-//no set size, 
+//no set size,  
+ 
+#include <iostream>
+#include <string>
+#include <vector>
+
+struct Vertex
+{
+	float x, y, z;
+};
+
+std::ostream& operator<<(std::ostream& stream, const Vertex& vertex)
+{
+	stream << vertex.x << ", " << vertex.y << ", " << vertex.z;
+	return stream;
+}
+
+int main()
+{
+	std::vector<Vertex> vertices; //vertex objects is optimal, not pointers
+	vertices.push_back({1,2,3});
+	vertices.push_back({ 4,5,6 });
+	for (const Vertex& v : vertices)//& more efficient than making copy
+	{
+		std::cout << vertices[i] << std::endl;
+	}
+	vertices.erase(vertices.begin()+1);//iterator {4,5,6} is removed
+	std::cin.get();
+}
+*/
