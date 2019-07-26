@@ -999,7 +999,48 @@ int main()
 
 */
 
-/**/
+/*
 
 //TUT 55 STACK VS HEAP MEMORY
 
+//same physical storage location---memory
+
+#include <iostream>
+#include <string>
+
+struct Vector3
+{
+	float x, y, z;
+	Vector3()
+		: x(10), y(11), z(12) {}
+};
+
+int main()
+{
+	int value = 5;//stack
+	int array[5];
+	array[0] = 0;
+	array[1] = 1;
+	array[2] = 2;
+	Vector3 vector;
+
+	//heap
+	int* hvalue = new int;
+	*hvalue = 5;
+	int* harray = new int[5];
+	harray[0] = 0;
+	harray[1] = 1;
+	harray[2] = 2;
+	Vector3 hvector = new Vector3();
+
+	std::cin.get();
+	//stack pointer--one operator per time
+
+	//allocating memory on stack is easy and fast, just one CPU instruction, while doing that on heap is to re-haul the heap, expensive and slow
+	//suggestion take away, always use stack unless dealing with large data set, then heap with appropriate set size is better used for storage data.
+
+}
+*/
+
+
+//TUT 56 Macros in cpp
