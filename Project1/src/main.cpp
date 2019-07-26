@@ -1042,5 +1042,34 @@ int main()
 }
 */
 
+/*
+//TUT 56 Macros in CPP
+#include <iostream>
 
-//TUT 56 Macros in cpp
+/*
+#include <string>
+
+#if PR_DEBUG == 1
+#define LOG(x) std::cout<<x<<std::endl;
+#elif defined(PR_RELEASE)
+#define LOG(x) 
+#endif
+
+int main()
+{	
+	LOG("Hello");
+	std::cin.get();
+}
+*/
+/*
+#define MAIN int main() \
+{\
+	std::cin.get();\
+}
+
+MAIN
+
+ */
+
+
+
