@@ -913,11 +913,11 @@ struct Vertex
 };
 
 
-
+/*
 
 int main()
 {
-	/*
+	
 	//before optimization, copied 6 times, initializing once per Vertex on main, and then copied it to the memory where vector is allocated,besides, the vertices vector be default can hold 2 vectors, when the third one is added, it must increase capacity to 3, debug to check it out 1+2+3 = 6
 	std::vector<Vertex> vertices; //vertex objects is optimal, not pointers
 	vertices.push_back(Vertex(1, 2, 3));
@@ -939,3 +939,19 @@ int main()
 */
 
 
+/*
+//TUT50 Using libraries in cpp
+#include <iostream>
+#include <GLFW/glfw3.h>
+
+extern "C" int glfwInit();
+
+int main()
+{
+	int a = glfwInit();
+	std::cout << a << std::endl;
+	std::cin.get();
+}
+
+
+*/
