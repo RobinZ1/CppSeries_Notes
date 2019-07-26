@@ -9,4 +9,7 @@
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug\glfw3.dll" />
+  </ItemGroup>
 </Project>

@@ -953,5 +953,53 @@ int main()
 	std::cin.get();
 }
 
+*/
+
+
+/*
+
+
+//TUT 51 Using dynamic libraries in cpp
+ 
+ #include <iostream>
+ #include <GLFW/glfw3.h>
+
+int main()
+{
+	int a = glfwInit();
+	std::cout << a << std::endl;
+	std::cin.get();
+}
+
 
 */
+
+/*
+
+//TUT54 Templates in cpp
+#include <iostream>
+#include <string>
+
+template<typename T, int N>
+class Array
+{
+private:
+	T m_Array[N];
+public:
+	int Getsize() const { return N; }
+};
+
+
+int main()
+{
+	Array<int, 50> array;
+	std::cout<<array.Getsize<<std::endl;
+	std::cin.get();
+}
+
+*/
+
+/**/
+
+//TUT 55 STACK VS HEAP MEMORY
+
