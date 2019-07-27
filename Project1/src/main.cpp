@@ -1073,3 +1073,14 @@ MAIN
 
 
 
+//TUT57 the 'auto' keyword in CPP	
+
+/*
+using device_map = ....(long type name);
+typedef ....(long type name) device_map;
+or auto device_map = ...
+*/
+
+
+//TUT58 the static array in CPP
+
