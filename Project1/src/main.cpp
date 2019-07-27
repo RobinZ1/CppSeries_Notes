@@ -1136,3 +1136,16 @@ int main()
 	//More info refer to cppreference.com 
 }
 */
+
+
+
+
+//TUT61 reason for not using namespace std?
+//TUT62 namespaces in CPP
+//avoid naming conflict
+
+/*
+namespace a = apple;
+using apple::print;
+*/
+
