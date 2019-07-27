@@ -1186,6 +1186,7 @@ int main()
 
 
 
+/*
 
 //TUT64 TIMING
 #include <iostream>
@@ -1227,3 +1228,68 @@ int main()
 	std::cin.get();
 }
 
+*/
+
+
+
+/*
+//TUT65 Multidimensional Arrays in CPP
+#include <iostream>
+
+int main()
+{
+	int** a2d = new int*[5];
+	for (int i = 0; i < 5; i++)
+		a2d[i] = new int[5];
+
+	//5 buffers for 5 int elements each, all buffers in random places. 
+	for (int y = 0; y < 5; y++)
+	{
+		for (int x = 0; x < 5; x++)
+		{
+			a2d[x][y] = 2;
+		}
+	}
+
+
+	for(int i = 0; i < 5; i++)
+		delete[] a2d[i];
+
+	delete[] a2d;
+
+	//difference. array has consecutive memory, which is faster!
+	int* array = new int[5 * 5];
+	for (int y = 0; y < 5; y++)
+	{
+		for (int x = 0; x < 5; x++)
+		{
+			a2d[x+y*5] = 2;
+		}
+	}
+
+	delete[] array;
+
+	
+	/*
+	int*** a3d = new int**[50];
+	for (int i = 0; i < 50; i++)
+	{
+		a3d[i] = new int*[50];
+		for (int j = 0; j < 50; j++)
+		{
+			int** ptr = a3d[i];
+			ptr[j] = new int[50];
+		}
+	}
+
+	a3d[0][0][0] = 0;
+	
+
+	std::cin.get();
+	//suggestion, try not to use two dimensional array
+}
+
+*/
+
+
+//TUT 66 sorting in CPP
