@@ -1083,4 +1083,36 @@ or auto device_map = ...
 
 
 //TUT58 the static array in CPP
+//check array document
 
+
+/*
+//TUT59 function pointers in CPP
+
+#include <iostream>
+#include <vector>
+
+
+void Print(int a)
+{
+	std::cout << a << std::endl;
+}
+
+void ForEach(const std::vector<int>& vector, void(*func)(int))
+{
+	for (auto ele : vector)
+		func(ele);
+}
+
+int main()
+{
+	std::vector<int> values = { 1,2,3,4 };
+	ForEach(values, Print);
+
+	//better way is to use lambda function
+	//ForEach(values, [](int value){std::cout<<value<<std::endl;});
+	//pass parameter from outside world into []
+	
+	std::cin.get();
+}
+*/
