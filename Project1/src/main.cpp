@@ -1141,7 +1141,7 @@ int main()
 
 
 //TUT61 reason for not using namespace std?
-//TUT62 namespaces in CPP
+//TUT62 namespace in CPP
 //avoid naming conflict
 
 /*
@@ -1149,3 +1149,40 @@ namespace a = apple;
 using apple::print;
 */
 
+
+
+/*
+
+//TUT63 threads in CPP
+#include <iostream>
+#include <thread>
+
+static bool s_Finished = false;
+
+void Dowork()
+{
+	using namespace std::literals::chrono_literals;
+	std::cout << "Started thread id: " << std::this_thread::get_id() << std::endl;
+
+	while (!s_Finished)
+	{
+		std::cout << "Working...\n";
+		std::this_thread::sleep_for(1s);
+	}
+}
+
+int main()
+{
+	std::thread worker(Dowork);
+	std::cin.get();
+	s_Finished = true;
+	worker.join();
+	std::cout << "Finished." << std::endl;
+	std::cout << "Ended thread id: " << std::this_thread::get_id() << std::endl;
+	std::cin.get();
+}
+
+*/
+
+
+//TUT64 TIMING
