@@ -1389,5 +1389,49 @@ int main()
 */
 
 
+/*
+//TUT69 Virtual Destructor in CPP
+#include <iostream>
 
-//
+class Base
+{
+public:
+	Base()
+	{
+		std::cout << "Base class created!" << std::endl;
+	}
+	virtual ~Base() //virtual keyword, memory leak resolved
+	{
+		std::cout << "Base class deleted!" << std::endl;
+	}
+};
+
+class Derived : public Base
+{
+public:
+	Derived ()
+	{
+		std::cout << "Derived class created!" << std::endl;
+	}
+	~Derived()
+	{
+		std::cout << "Derived class deleted!" << std::endl;
+	}
+};
+
+int main()
+{
+	Base* base = new Base();
+	delete base;
+	std::cout << "------" << std::endl;
+	Derived* derived = new Derived();
+	delete derived;
+	std::cout << "------" << std::endl;
+	//without virtual function, the following code will cause memory leak
+	Base* der = new Derived();
+	delete der;
+
+	std::cin.get();
+}
+
+*/
