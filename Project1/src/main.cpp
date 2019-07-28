@@ -1435,3 +1435,26 @@ int main()
 }
 
 */
+
+
+
+
+//TUT70 casting in CPP
+//static, dynamic, const, reinterpret cast.
+//4 castings are meant to control the type transformation between classes(base and extened classes).
+
+//reinterpret_cast<new_type>(expression)
+//dynamic_cast<new_type>(expression)
+//static_cast<new_type>(expression)
+//const_cast<new_type>(expression)
+
+
+/*
+static_cast: 在功能上基本上与C风格的类型转换一样强大，含义也一样。它也有功能上限制。例如，你不能用static_cast象用C风格的类型转换一样把struct转换成int类型或者把double类型转换成指针类型，另外，static_cast不能从表达式中去除const属性，因为另一个新的类型转换操作符const_cast有这样的功能。
+
+const_cast: 用于类型转换掉表达式的const或volatileness属性。通过使用const_cast，你向人们和编译器强调你通过类型转换想做的只是改变一些东西的constness或者 volatileness属性。这个含义被编译器所约束。如果你试图使用const_cast来完成修改constness 或者volatileness属性之外的事情，你的类型转换将被拒绝。
+
+dynamic_cast: 它被用于安全地沿着类的继承关系向下进行类型转换。这就是说，你能用dynamic_cast把指向基类的指针或引用转换成指向其派生类或其兄弟类的指针或引用，而且你能知道转换是否成功。失败的转换将返回空指针（当对指针进行类型转换时）或者抛出异常（当对引用进行类型转换时）。
+
+reinterpret_cast: 使用这个操作符的类型转换，其的转换结果几乎都是执行期定义（implementation-defined）。因此，使用reinterpret_casts的代码很难移植。reinterpret_casts的最普通的用途就是在函数指针类型之间进行转换。
+*/
