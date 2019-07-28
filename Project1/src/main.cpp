@@ -1320,3 +1320,29 @@ int main()
 	std::cin.get();
 }
 */
+
+
+/*
+//TUT67 Type Punning in CPP
+//show memory of variable as a different type as it is.
+#include <iostream>
+
+struct Entity
+{
+	int x, y;
+	int* GetPositions()
+	{
+		return &x;
+	}
+};
+
+int main()
+{
+	Entity e = { 5,8 };
+	int* position = e.GetPositions();
+	position[0] = 2;
+	int y = *(int*)((char*)&e + 4);
+	std::cout << y << std::endl;
+	std::cin.get();
+}
+*/
