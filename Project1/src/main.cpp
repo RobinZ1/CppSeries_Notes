@@ -1346,3 +1346,44 @@ int main()
 	std::cin.get();
 }
 */
+
+
+/*
+//TUT68 Unions in CPP
+#include <iostream>
+
+struct vector2
+{
+	float x, y;
+};
+
+struct vector4
+{
+	union
+	{
+		struct  
+		{
+			float a, b, c, d;
+		};
+
+		struct 
+		{
+			vector2 m, n;
+		};
+	};
+};
+
+void Printvalue(const vector2& vector)
+{
+	std::cout << vector.x << ", " << vector.y << std::endl;
+}
+
+int main()
+{
+	vector4 vector = { 1.0f, 2.0f, 3.0f, 4.0f };
+	Printvalue(vector.m);
+	Printvalue(vector.n);
+
+	std::cin.get();
+}
+*/
