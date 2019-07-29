@@ -1458,3 +1458,20 @@ dynamic_cast: 它被用于安全地沿着类的继承关系向下进行类型转换。这就是说，你能用dy
 
 reinterpret_cast: 使用这个操作符的类型转换，其的转换结果几乎都是执行期定义（implementation-defined）。因此，使用reinterpret_casts的代码很难移植。reinterpret_casts的最普通的用途就是在函数指针类型之间进行转换。
 */
+
+
+
+//TUT71 action breakpoint
+//TUT72 safety in modern CPP
+//TUT73 Precompiled Headers in CPP
+
+ /*
+ #include "pch.h"
+//notice in actual practice, pch.h should consist nearly all the header files
+
+int main()
+{
+	std::cout << "Hello World" << std::endl
+}
+
+*/
